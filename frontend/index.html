@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Therapist Practice Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-container">
+    <header>
+        <h1>Therapist Practice Dashboard</h1>
+        <p>Manage your profile, leads, sessions, documents, and earnings.</p>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-button active" data-tab="profile">Profile</button>
+        <button class="tab-button" data-tab="leads">Leads</button>
+        <button class="tab-button" data-tab="sessions">Sessions</button>
+        <button class="tab-button" data-tab="documents">Documents</button>
+        <button class="tab-button" data-tab="earnings">Earnings</button>
+    </nav>
+
+    <main>
+        <section id="profile" class="tab active">
+            <h2>My Profile</h2>
+            <div id="profile-view" class="card"></div>
+
+            <h3>Update / Create Profile</h3>
+            <form id="profile-form" class="card form-card">
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" name="full_name" required>
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="field">
+                    <label>Specialization</label>
+                    <input type="text" name="specialization" placeholder="e.g. Anxiety, Couples Therapy">
+                </div>
+                <div class="field">
+                    <label>Bio</label>
+                    <textarea name="bio" rows="3"></textarea>
+                </div>
+                <button type="submit">Save Profile</button>
+                <div class="status" id="profile-status"></div>
+            </form>
+        </section>
+
+        <section id="leads" class="tab">
+            <h2>Leads</h2>
+            <div class="section-info">
+                <p>Manage your leads. Purchase available leads to convert them into clients.</p>
+            </div>
+            <div id="leads-list" class="card-list">
+                <p class="muted">Loading leads...</p>
+            </div>
+        </section>
+
+        <section id="sessions" class="tab">
+            <h2>Sessions</h2>
+            <div class="section-info">
+                <p>Track and manage your therapy sessions. Mark sessions as completed and add encrypted notes.</p>
+            </div>
+            <div id="sessions-list" class="card-list">
+                <p class="muted">Loading sessions...</p>
+            </div>
+        </section>
+
+        <section id="documents" class="tab">
+            <h2>Upload Documents</h2>
+            <div class="section-info">
+                <p>Upload your professional documents, certifications, and credentials.</p>
+            </div>
+            <form id="document-form" class="card form-card">
+                <div class="field">
+                    <label>Select File</label>
+                    <input type="file" name="file" required>
+                </div>
+                <button type="submit">Upload Document</button>
+                <div class="status" id="document-status"></div>
+            </form>
+            <div id="documents-list" class="card-list" style="margin-top: 20px;">
+                <p class="muted">No documents uploaded yet.</p>
+            </div>
+        </section>
+
+        <section id="earnings" class="tab">
+            <h2>Earnings Overview</h2>
+            <div class="section-info">
+                <p>Track your practice earnings and financial performance.</p>
+            </div>
+            <div id="earnings-card" class="card">
+                <p class="muted">Loading earnings data...</p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
